@@ -1,37 +1,45 @@
+@import 'my-variables';
+@import 'waves';
 
+body {
+  background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);
 
-/*Nav*/
-nav {
-  width: 100%;
-  text-align: center;
-  color: white;
-  .logo {
-    width: 4rem;
-    margin: 3rem 2rem;
-    mix-blend-mode: lighten;
-    
-  }
-  .logo-animation {
-    display: none;
-    opacity: 0;
-    transition: opacity .5s ease-in-out;
-  }
 }
-/* header */
-  .header {
-    position:absolute;
-    text-align:center;
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-    background-attachment: fixed;
-    color:rgb(0, 0, 0);
-    height: 100vh;
-    width: 100vw;
-    z-index: -2;
-    overflow: auto;
 
-    .btn {
-      color: white;
+/* header */
+.header {
+  position: relative;
+  text-align:center;
+  background-attachment: fixed;
+  color:rgb(0, 0, 0);
+  min-height: 101vh;
+  height: fit-content;
+  width: 100%;
+  
+  /*Nav*/
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    .logo {
+      width: 4rem;
+      margin: 3rem 2rem;
+      mix-blend-mode: lighten;
+      
+    }
+    .logo-animation {
+      display: none;
+      opacity: 0;
+      transition: opacity .5s ease-in-out;
+    }
+  }
+
+  .btn {
+    color: white;
       transition: transform .2s ease-in-out;
+      background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);
+
       &:hover {
         color: white;
         transform: scale(1.05);  
@@ -44,7 +52,6 @@ nav {
 
       .load-more-btn {
         border: 2px solid white;
-        background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
         max-width: fit-content;
 
         margin-top: 3em;
@@ -71,80 +78,32 @@ nav {
        
       }
       .read-article-btn {
-        background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
         max-width: fit-content;
         
       }
     }
-  }  
-
-  /* Waves */
-
-.waves {
-  position:fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height:15vh;
-  min-height:100px;
-  max-height:150px;
-  z-index: -1;
-}
-
-/* Waves animation */
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
   }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
-    }
-    100% { 
-      transform: translate3d(85px,0,0);
+  
+  // Footer
+  footer {
+    i {
+      color: $secondary-color;
     }
   }
-
-  @media (max-width: 768px) {
-    .waves {
-      height:40px;
-      min-height:40px;
-    }
-    .content {
-      height:30vh;
-    }
-    h1 {
-      font-size:24px;
-    }
-  }
-
-  /* Waves End */
+  
 
   
 @media only screen and (min-width: 576px) {
-  nav {
-    text-align: start;
-
-    .logo {
-      margin-right: 1rem;
-    }
-    .logo-animation {
-      display: inline;
+  .header {
+    nav {
+      justify-content: flex-start;
+      .logo {
+        margin-right: 1rem;
+      }
+      .logo-animation {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }
