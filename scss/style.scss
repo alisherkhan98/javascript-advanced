@@ -1,13 +1,9 @@
 @import 'my-variables';
 @import 'waves';
 
-body {
-  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
-
-}
-
 /* header */
 .header {
+  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
   position: relative;
   text-align:center;
   background-attachment: fixed;
@@ -22,10 +18,18 @@ body {
     display: flex;
     justify-content: center;
     color: white;
-    .logo {
-      width: 4rem;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 3rem 2rem;
-      mix-blend-mode: lighten;
+      color: white;
+      font-size: 2rem;
+      
+      width: 4rem;
+      height: 4rem;
+      border: 2px solid white;
+
       
     }
     .logo-animation {
@@ -97,7 +101,7 @@ body {
   .header {
     nav {
       justify-content: flex-start;
-      .logo {
+      a {
         margin-right: 1rem;
       }
       .logo-animation {

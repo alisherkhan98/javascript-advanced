@@ -74,12 +74,9 @@
   }
 }
 /* Waves End */
-body {
-  background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
-}
-
 /* header */
 .header {
+  background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
   position: relative;
   text-align: center;
   background-attachment: fixed;
@@ -97,10 +94,16 @@ body {
   justify-content: center;
   color: white;
 }
-.header nav .logo {
-  width: 4rem;
+.header nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 3rem 2rem;
-  mix-blend-mode: lighten;
+  color: white;
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid white;
 }
 .header nav .logo-animation {
   display: none;
@@ -156,7 +159,7 @@ footer i {
   .header nav {
     justify-content: flex-start;
   }
-  .header nav .logo {
+  .header nav a {
     margin-right: 1rem;
   }
   .header nav .logo-animation {
