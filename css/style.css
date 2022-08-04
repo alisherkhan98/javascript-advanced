@@ -63,7 +63,7 @@
 }
 @media (max-width: 768px) {
   .waves {
-    height: 40px;
+    height: 15vh;
     min-height: 40px;
   }
   .content {
@@ -75,7 +75,7 @@
 }
 /* Waves End */
 body {
-  background: linear-gradient(60deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
+  background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
 }
 
 /* header */
