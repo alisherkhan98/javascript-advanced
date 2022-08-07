@@ -1,9 +1,13 @@
 @import 'my-variables';
 @import 'waves';
 
+/*Background*/
+body {
+  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
+
+}
 /* header */
 .header {
-  background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
   position: relative;
   text-align:center;
   background-attachment: fixed;

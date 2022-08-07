@@ -74,9 +74,13 @@
   }
 }
 /* Waves End */
+/*Background*/
+body {
+  background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
+}
+
 /* header */
 .header {
-  background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
   position: relative;
   text-align: center;
   background-attachment: fixed;
