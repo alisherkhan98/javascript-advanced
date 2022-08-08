@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/alisherkhan98/javascript-advanced.git"
   },
-  "author": "",
+  "author": "ali",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/alisherkhan98/javascript-advanced/issues"
@@ -31,5 +31,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
-  }
+  },
+  "keywords": []
 }
