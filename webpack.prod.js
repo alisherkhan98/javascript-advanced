@@ -6,14 +6,14 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     mode: "production",
-    entry: "./js/index.js",
+    entry: "./src/js/index.js",
     output: {
         filename: "main.[contenthash].js",
         path: path.resolve(__dirname, "docs")
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./assets/template.html",
+            template: "./src/assets/template.html",
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
@@ -31,12 +31,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader",
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
             },
         ]
     },
