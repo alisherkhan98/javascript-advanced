@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {Dotenv} = require('dotenv-webpack');
 
 module.exports = {
     mode: "development",
@@ -8,9 +9,12 @@ module.exports = {
         filename: "main.js",
         path: path.resolve(__dirname, "docs")
     },
-    plugins: [new HtmlWebpackPlugin({
+    plugins: [
+        new HtmlWebpackPlugin({
         template: "./src/assets/template.html",
-    })],
+        }),
+        new Dotenv()
+    ],
     module: {
         rules: [
             {

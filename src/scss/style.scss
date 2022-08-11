@@ -4,7 +4,6 @@
 /*Background*/
 body {
   background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
-
 }
 /* header */
 .header {
@@ -18,11 +17,12 @@ body {
   
   /*Nav*/
   nav {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     color: white;
-    a {
+    .logo {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -41,9 +41,12 @@ body {
       opacity: 0;
       transition: opacity .5s ease-in-out;
     }
+
+    
+  
   }
 
-  .btn {
+  .btn-gradient {
     color: white;
       transition: transform .2s ease-in-out;
       background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);

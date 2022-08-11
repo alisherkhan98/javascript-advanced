@@ -93,12 +93,13 @@ body {
   /*Nav*/
 }
 .header nav {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   color: white;
 }
-.header nav a {
+.header nav .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,12 +115,12 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.header .btn {
+.header .btn-gradient {
   color: white;
   transition: transform 0.2s ease-in-out;
   background: linear-gradient(60deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
 }
-.header .btn:hover {
+.header .btn-gradient:hover {
   color: white;
   transform: scale(1.05);
 }

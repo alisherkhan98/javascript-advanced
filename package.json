@@ -21,6 +21,8 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "dotenv": "^16.0.1",
+    "dotenv-webpack": "^8.0.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
@@ -33,5 +35,8 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "dotenv-defaults": "^5.0.2"
+  }
 }

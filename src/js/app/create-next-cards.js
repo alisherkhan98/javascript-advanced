@@ -30,7 +30,7 @@ export async function createNextCards (array) {
         card.innerHTML = `<div class="card text-center">
                          <div class="card-body">
                              <p class="card-text">${_.get(details, 'data.title')}</p>
-                             <a href="${_.get(details, 'data.url')}" class="btn btn-rounded read-article-btn">Read article</a>
+                             <a href="${_.get(details, 'data.url')}" class="btn btn-gradient btn-rounded read-article-btn">Read article</a>
                          </div>
                          <div class="card-footer text-muted">${date}</div>
                          </div>`;
