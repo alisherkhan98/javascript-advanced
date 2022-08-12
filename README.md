@@ -30,7 +30,7 @@
 <h3 align="center">Hacker News</h3>
 
   <p align="center">
-    Daily tech news
+    Daily tech news from all over the world
     <br />
     <br />
     <a href="https://github.com/alisherkhan98/javascript-advanced"><strong>Explore the docs »</strong></a>
@@ -64,11 +64,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -77,9 +74,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot]
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This is my second project built with Javascript. The web app is very simple, it fetches the latest 500 articles from the [Hacker News API](https://github.com/HackerNews/API) and it shows 10. You can press the load more button to load the next 10 articles until you load them all.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,14 +84,10 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![webpack][webpack.com]][webpack-url]
+* [![Lodash][lodash.com]][lodash-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![Axios][axios.com]][axios-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,12 +96,11 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy of the project up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+* Install [Node.js](https://nodejs.org/it/download)
 * npm
   ```sh
   npm install npm@latest -g
@@ -116,19 +108,31 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/alisherkhan98/javascript-advanced.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Create a new `.env` file in the root of the project and copy this in it
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   API_URL="https://hacker-news.firebaseio.com/v0/newstories.json"
    ```
+4. Now if you want to open a live server to start developing type this in your terminal:
+     ```sh
+   npm start
+   ```
+   
+   otherwise if you want to build the  final files bundeled with webpack type
+     ```sh
+     npmm run build
+   ```
+   
+   This will create a new dist folder with the hashed files in it
+   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,25 +141,10 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+The app is very basic, there's one button at the bottom of the page to load ten more articles, and on every article card you can press a "read more" button which leads you to the article itself.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -177,34 +166,18 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Email: asherkhan982@gmail.com
+<br/>
+Project Link: [https://github.com/alisherkhan98/javascript-advanced](https://github.com/alisherkhan98/javascript-advanced)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -222,10 +195,15 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-url]: https://github.com/alisherkhan98/javascript-advanced/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ali-sher-khan-1331a8205
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: src/assets/img/screenshot.jpg
 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-[webpack.com]: https://img.shields.io/badge/-Webpack-blue?style=for-the-badge&logo=webpack&logoColor=white
+[webpack.com]: https://img.shields.io/badge/-Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black
 [webpack-url]: https://webpack.js.org
+[lodash.com]: https://img.shields.io/badge/-lodash-3492FF?style=for-the-badge&logo=lodash&logoColor=white
+[lodash-url]: https://lodash.com
+[axios.com]: https://img.shields.io/badge/-axios-7e3e8d?style=for-the-badge&logoColor=white
+[axios-url]: https://axios-http.com
+
 
