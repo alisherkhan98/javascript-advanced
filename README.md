@@ -141,7 +141,7 @@ To get a local copy of the project up and running follow these simple example st
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The app is very basic, there's one button at the bottom of the page to load ten more articles, and on every article card you can press a "read more" button which leads you to the article itself.
+The app is very basic, there's one button at the bottom of the page to load ten more articles, and on every card you can press a "read article" button which leads you to the article itself.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
