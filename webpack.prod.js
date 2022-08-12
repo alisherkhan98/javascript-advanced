@@ -10,7 +10,7 @@ module.exports = {
     entry: "./src/js/index.js",
     output: {
         filename: "main.[contenthash].js",
-        path: path.resolve(__dirname, "docs")
+        path: path.resolve(__dirname, "dist")
     },
     plugins: [
         new HtmlWebpackPlugin({
