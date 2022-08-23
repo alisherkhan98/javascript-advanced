@@ -1,13 +1,12 @@
 import "../scss/style.scss"
 
-import {getIdList} from './app/get-id-list';
-import {createLoadMoreBtn} from './app/create-load-more';
-import {createNextCards} from './app/create-next-cards';
-import {changeOpacity} from './utilities/change-opacity';
-
+import {getIdList} from './API';
+import {createLoadMoreBtn} from './DOM';
+import {createNextCards} from './DOM';
+import {changeOpacity} from './DOM';
 
 getIdList(process.env.API_URL)
-.then( () => createNextCards())
+.then( (list) => createNextCards(list))
 .then(() => createLoadMoreBtn());
 
 changeOpacity(document.querySelector('.logo-animation'), '1', 500);
