@@ -11,9 +11,11 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-        template: "./src/assets/template.html",
+           template: "./src/assets/template.html",
         }),
-        new Dotenv()
+        new Dotenv({
+            systemvars: true,
+        }),
     ],
     module: {
         rules: [

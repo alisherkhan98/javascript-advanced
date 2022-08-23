@@ -36,7 +36,7 @@
     <a href="https://github.com/alisherkhan98/javascript-advanced"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jhugo/repo_name">View Demo</a>
+    <a href="https://62f8191d10051669672f5193--jovial-nougat-5950a7.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/alisherkhan98/javascript-advanced/issues">Report Bug</a>
     ·
