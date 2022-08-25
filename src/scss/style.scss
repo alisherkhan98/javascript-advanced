@@ -4,6 +4,18 @@
 /*Background*/
 body {
   background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
+  
+  .btn-gradient {
+    color: white;
+      transition: transform .2s ease-in-out;
+      background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);
+
+      &:hover {
+        color: white;
+        transform: scale(1.05);  
+      }
+      
+  }
 }
 /* header */
 .header {
@@ -46,17 +58,7 @@ body {
   
   }
 
-  .btn-gradient {
-    color: white;
-      transition: transform .2s ease-in-out;
-      background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);
 
-      &:hover {
-        color: white;
-        transform: scale(1.05);  
-      }
-      
-    }
     .cards-container {
       margin: 0 auto;
       justify-content: flex-start;
@@ -93,9 +95,9 @@ body {
         
       }
     }
-  }
+}
   
-  // Footer
+  /* Footer */
   footer {
     i {
       color: $secondary-color;
@@ -103,6 +105,9 @@ body {
   }
   
 
+.modal {
+  position:absolute;
+}
   
 @media only screen and (min-width: 576px) {
   .header {

@@ -84,3 +84,4 @@ export async function createNextCards (list) {
     loadedIds += 10;
     
 }
+

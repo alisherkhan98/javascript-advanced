@@ -2,7 +2,7 @@
 
 export async function getIdList (url) {
     let response = await axios.get(url);
-    return response.data;  
+    return response.data;
 }
 
 

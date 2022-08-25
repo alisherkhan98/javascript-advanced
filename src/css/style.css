@@ -156,8 +156,13 @@ body {
   max-width: fit-content;
 }
 
+/* Footer */
 footer i {
   color: rgb(0, 172, 193);
+}
+
+.modal {
+  position: absolute;
 }
 
 @media only screen and (min-width: 576px) {
