@@ -78,6 +78,29 @@
 body {
   background: linear-gradient(90deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
 }
+body .btn-gradient {
+  color: white;
+  transition: transform 0.2s ease-in-out;
+  background: linear-gradient(60deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
+}
+body .btn-gradient:hover {
+  color: white;
+  transform: scale(1.05);
+}
+body .fs-black {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .fs-black span {
+  padding-left: 1rem;
+  color: white;
+}
 
 /* header */
 .header {
@@ -114,15 +137,6 @@ body {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-}
-.header .btn-gradient {
-  color: white;
-  transition: transform 0.2s ease-in-out;
-  background: linear-gradient(60deg, rgb(83, 58, 183) 0%, rgb(0, 172, 193) 100%);
-}
-.header .btn-gradient:hover {
-  color: white;
-  transform: scale(1.05);
 }
 .header .cards-container {
   margin: 0 auto;

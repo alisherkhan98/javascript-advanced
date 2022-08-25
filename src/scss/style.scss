@@ -4,7 +4,7 @@
 /*Background*/
 body {
   background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
-  
+
   .btn-gradient {
     color: white;
       transition: transform .2s ease-in-out;
@@ -15,6 +15,22 @@ body {
         transform: scale(1.05);  
       }
       
+  }
+
+  .fs-black {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(#000000, .6);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      padding-left: 1rem;
+      color: white;
+    }
   }
 }
 /* header */

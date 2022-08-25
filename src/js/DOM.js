@@ -1,5 +1,6 @@
 import {getDetails} from './API';
-
+import {allIds} from './API';
+import { isError } from './API';
 
 
 // Function to get date
@@ -28,23 +29,30 @@ export function changeOpacity (elem, opacity, interval) {
 
 
 // function to create the "load more" button
-export function createLoadMoreBtn () {
+export async function createLoadMoreBtn () {
     let cardsContainer = document.querySelector('.cards-container');
     cardsContainer.insertAdjacentHTML("beforeend", ' <div class="load-more-div col-12 p-3 d-flex justify-content-center align-items-center"><button class="load-more-btn btn btn-gradient btn-rounded">Load more</button></div>')
-    let loadMoreBtn = document.querySelector('.load-more-div')
-    loadMoreBtn.onclick = function () {
-    createNextCards();
-    
-    }
+    let loadMoreBtn = document.querySelector('.load-more-div');
+    loadMoreBtn.addEventListener ('click', function NextCards () {
 
+        // remove click listener so that you can't click multiple times and send too many API requests
+        loadMoreBtn.removeEventListener('click', NextCards);
+        createNextCards()
+        .then(() => {
+          setTimeout(() => loadMoreBtn.addEventListener ('click', NextCards), 1000)
+        })
+    
+        }
+    )
 };
+
 
 
 // function to load details and create cards for the next 10 articles
 
 let loadedIds = 0
 
-export async function createNextCards (list) {
+export async function createNextCards () {
     let cardsContainer = document.querySelector('.cards-container');
 
     if (loadedIds >= 500) {
@@ -56,25 +64,43 @@ export async function createNextCards (list) {
 
         
         // load details
-        let details = await getDetails(list[i]);
+        if (isError) {
+            break
+        }
+        details = await getDetails(allIds[i]);
+        
         
         // create date
         let date = createDate(details);
 
         // Creation of card
         let card = document.createElement('div');
+        let url = _.get(details, 'data.url');
         card.setAttribute('class', 'my-card col-12 col-md-6 col-lg-3 p-3');
-        card.innerHTML = `<div class="card text-center">
-                         <div class="card-body">
-                             <p class="card-text">${_.get(details, 'data.title')}</p>
-                             <a href="${_.get(details, 'data.url')}" class="btn btn-gradient btn-rounded read-article-btn">Read article</a>
-                         </div>
-                         <div class="card-footer text-muted">${date}</div>
-                         </div>`;
+
+        // Making the button of articles without url disabled with a tooltip
+        if (url) {
+            card.innerHTML = `<div class="card text-center">
+            <div class="card-body">
+                <p class="card-text">${_.get(details, 'data.title')}</p>
+                <a href="${url}" class="btn btn-gradient btn-rounded read-article-btn">Read article</a>
+            </div>
+            <div class="card-footer text-muted">${date}</div>
+            </div>`;
+        } else {
+            card.innerHTML = `<div class="card text-center">
+            <div class="card-body">
+                <p class="card-text">${_.get(details, 'data.title')}</p>
+                <a data-mdb-toggle="tooltip" title="Sorry, article not available" class="btn btn-gradient btn-rounded read-article-btn">Read article</a>
+            </div>
+            <div class="card-footer text-muted">${date}</div>
+            </div>`;
+        }
         // the first time the function is called it will append to container but then insert before "load more" button
         if (loadedIds < 10) {
         cardsContainer.append(card);
-        } else {
+        } else 
+        {
         let loadMoreBtn = document.querySelector('.load-more-div');
         loadMoreBtn.before(card);
         }
@@ -82,6 +108,7 @@ export async function createNextCards (list) {
         
     }
     loadedIds += 10;
+
     
 }
 
