@@ -36,7 +36,7 @@
     <a href="https://github.com/alisherkhan98/javascript-advanced"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://62f8191d10051669672f5193--jovial-nougat-5950a7.netlify.app/">View Demo</a>
+    <a href="https://jovial-nougat-5950a7.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/alisherkhan98/javascript-advanced/issues">Report Bug</a>
     ·
@@ -146,7 +146,9 @@ The app is very basic, there's one button at the bottom of the page to load ten 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+##ERROR HANDLING
 
+If an error occurs during the calls to the API a custom modal appears with the description of the error. If it's a 404 or a 500 status error a custom message will appear, otherwise it will show the error message and the relative status code.
 
 <!-- CONTRIBUTING -->
 ## Contributing
