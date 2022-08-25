@@ -64,11 +64,9 @@ export async function createNextCards () {
 
         
         // load details
-        if (isError) {
-            break
-        }
-        details = await getDetails(allIds[i]);
-        
+        if (!isError) {
+        var details = await getDetails(allIds[i]);
+        } else {break};
         
         // create date
         let date = createDate(details);
