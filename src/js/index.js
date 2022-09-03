@@ -30,7 +30,7 @@ function getNextDetails() {
   let nextIds = allIds.slice(loadedIds, loadedIds + 10);
   console.log(nextIds);
   let details = nextIds.map((id) =>
-    axios.get(`https://hackerr-news.firebaseio.com/v0/item/${id}.json`)
+    axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
   );
   loadedIds += 10;
   return Promise.all(details).catch(function (error) {
