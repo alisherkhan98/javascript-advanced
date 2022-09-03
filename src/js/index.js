@@ -133,7 +133,7 @@ function stopLoading() {
   }, 1100);
 }
 
-//  Main
+//  Main Code
 
 //  Starting animation
 changeOpacity(document.querySelector(".logo-animation"), "1", 500);
