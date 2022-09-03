@@ -5,19 +5,13 @@ let allIds = [];
 
 async function getIdList(url) {
   let response = await axios.get(url).catch(function (error) {
-    let modalBody = document.querySelector(".modal-body");
     if (error.response.status == 404) {
-      modalBody.textContent =
-        "The page was not found. Please check if you set up the environment variable correctly and try again";
+      throw new Error("The page was not found. Please check if you set up the environment variable correctly and try again");
     } else if (error.response.status == 500) {
-      modalBody.textContent =
-        "There was an error with the server. Please retry later";
+      throw new Error("There was an error with the server. Please retry later");
     } else {
-      modalBody.textContent = `Unknown error "${error.message}" Status code: ${error.response.status}`;
+      throw new Error(`Unknown error "${error.message}" Status code: ${error.response.status}`);
     }
-    setTimeout(() => {
-      $("#errorModal").modal("show");
-    }, 2000);
   });
 
   allIds.push(...response.data);
@@ -34,20 +28,14 @@ function getNextDetails() {
   );
   loadedIds += 10;
   return Promise.all(details).catch(function (error) {
-    let modalBody = document.querySelector(".modal-body");
-
     if (error.response.status == 404) {
-      modalBody.textContent =
-        "There was a problem connecting with the API. Please retry later";
+      throw new Error("There was a problem connecting with the API. Please retry later");
     } else if (error.response.status == 500) {
-      modalBody.textContent =
-        "There was an error with the server. Please retry later ";
+      throw new Error("There was an error with the server. Please retry later");
     } else {
-      modalBody.textContent = `Unknown error "${error.message}" Status code: ${error.response.status}`;
+      throw new Error(`Unknown error "${error.message}" Status code: ${error.response.status}`);
     }
-    setTimeout(() => {
-      $("#errorModal").modal("show");
-    }, 2000);
+  
   });
 }
 
@@ -146,6 +134,13 @@ getIdList(process.env.API_URL)
     let loadMoreBtn = document.querySelector(".load-more-btn");
     changeOpacity(loadMoreBtn, "1", 1000);
   })
+  .catch((e) => {
+    let modalBody = document.querySelector(".modal-body");
+    modalBody.textContent = e.message;
+    setTimeout(() => {
+      $("#errorModal").modal("show");
+    }, 2000);
+  })
   .finally(() => stopLoading());
 
 //   Handling Load More button
@@ -155,6 +150,13 @@ loadMoreBtn.addEventListener("click", function () {
   loadMoreBtn.setAttribute("disabled", "true");
   getNextDetails()
     .then((details) => createNextCards(details))
+    .catch((e) => {
+      let modalBody = document.querySelector(".modal-body");
+      modalBody.textContent = e.message;
+      setTimeout(() => {
+        $("#errorModal").modal("show");
+      }, 2000);
+    })
     .finally(() => {
       stopLoading();
       loadMoreBtn.removeAttribute("disabled");
