@@ -6,11 +6,15 @@ let allIds = [];
 async function getIdList(url) {
   let response = await axios.get(url).catch(function (error) {
     if (error.response.status == 404) {
-      throw new Error("The page was not found. Please check if you set up the environment variable correctly and try again");
+      throw new Error(
+        "The page was not found. Please check if you set up the environment variable correctly and try again"
+      );
     } else if (error.response.status == 500) {
       throw new Error("There was an error with the server. Please retry later");
     } else {
-      throw new Error(`Unknown error "${error.message}" Status code: ${error.response.status}`);
+      throw new Error(
+        `Unknown error "${error.message}" Status code: ${error.response.status}`
+      );
     }
   });
 
@@ -29,13 +33,16 @@ function getNextDetails() {
   loadedIds += 10;
   return Promise.all(details).catch(function (error) {
     if (error.response.status == 404) {
-      throw new Error("There was a problem connecting with the API. Please retry later");
+      throw new Error(
+        "There was a problem connecting with the API. Please retry later"
+      );
     } else if (error.response.status == 500) {
       throw new Error("There was an error with the server. Please retry later");
     } else {
-      throw new Error(`Unknown error "${error.message}" Status code: ${error.response.status}`);
+      throw new Error(
+        `Unknown error "${error.message}" Status code: ${error.response.status}`
+      );
     }
-  
   });
 }
 
