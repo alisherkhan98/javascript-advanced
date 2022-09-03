@@ -1,159 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hacker News</title>
 
     <!-- Icon -->
-    <link rel="icon" href="./img/logo.png">
+    <link rel="icon" href="./img/logo.png" />
 
     <!-- Font Awesome -->
     <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet" />
     <!-- Google Fonts -->
     <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet" />
+
     <!-- MDB -->
     <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
-    rel="stylesheet"
-    />
-    
-    
-    <!-- Axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+      rel="stylesheet" />
   </head>
-  
-  
+
   <body>
     <!-- Loading animation -->
     <div class="fs-black">
       <div>
-      <div class="spinner-border text-info" role="status"></div>
-      <!-- <span class="display-6"> Loading...</span> -->
-
+        <div class="spinner-border text-info" role="status"></div>
+        <!-- <span class="display-6"> Loading...</span> -->
       </div>
     </div>
     <!-- Header -->
     <div class="header" id="header">
-       
-        <!-- Nav -->
-        <nav class="container">
-            <!-- logo -->
-            <a class="logo" href="./index.html"><span>HN</span></a>
-            <span class="logo-animation">HACKER NEWS, YOUR DAILY TECH FEED</span>
-            
-        </nav>
-        
-        
-        
-       
-        <!-- Cards container -->
-        <div class="container cards-container row">
-           
-        </div>
+      <!-- Nav -->
+      <nav class="container">
+        <!-- logo -->
+        <a class="logo" href="./index.html"><span>HN</span></a>
+        <span class="logo-animation">HACKER NEWS, YOUR DAILY TECH FEED</span>
+      </nav>
 
-        <!-- Waves -->
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <!-- Cards container -->
+      <div class="container cards-container row">
+        <div
+          class="load-more-div col-12 p-3 d-flex justify-content-center align-items-center">
+          <button class="load-more-btn btn btn-gradient btn-rounded">
+            Load more
+          </button>
+        </div>
+      </div>
+
+      <!-- Waves -->
+      <div>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto">
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7" />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)" />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)" />
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-            </g>
-            </svg>
-        </div>
+          </g>
+        </svg>
+      </div>
 
-        <!-- Button trigger modal -->
-        <button type="button" id="modal-btn" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#errorModal" style="display: none">
-          Launch demo modal
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModal" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Whoops!</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">...</div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-gradient btn-rounded" data-mdb-dismiss="modal">Close</button>
-                <a href="./index.html"><button type="button" class="btn btn-primary btn-gradient btn-rounded" id="retry-btn">Retry</button></a>
-              </div>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="errorModal"
+        tabindex="-1"
+        aria-labelledby="errorModal"
+        aria-hidden="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Whoops!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-mdb-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary btn-gradient btn-rounded"
+                data-mdb-dismiss="modal">
+                Close
+              </button>
+              <a href="./index.html">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-gradient btn-rounded"
+                  id="retry-btn">
+                  Retry
+                </button>
+              </a>
             </div>
           </div>
         </div>
-
-    
+      </div>
     </div>
     <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
-    <!-- Section: Social media -->
-    <section class="container d-flex justify-content-center p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+    <footer class="text-center text-lg-start bg-white text-muted">
+      <!-- Section: Social media -->
+      <section
+        class="container d-flex justify-content-center p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 link-grayish">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 link-grayish">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 link-grayish">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 link-grayish">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ali-sher-khan-1331a8205/"
+            class="me-4 link-grayish">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/alisherkhan98" class="link-grayish">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.025)">
+        Credits:
+        <a class="text-reset fw-bold" href="https://github.com/HackerNews/API"
+          >Hacker News x Firebase</a
+        >
       </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 link-grayish">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 link-grayish">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 link-grayish">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 link-grayish">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/ali-sher-khan-1331a8205/" class="me-4 link-grayish">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/alisherkhan98" class="link-grayish">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-      Credits:
-      <a class="text-reset fw-bold" href="https://github.com/HackerNews/API">Hacker News x Firebase</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-    
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
     <!-- Lodash -->
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- MDB -->
     <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
-    ></script>
-
-
-</body>
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
 </html>

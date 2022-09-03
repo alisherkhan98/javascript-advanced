@@ -1,6 +1,5 @@
-@import 'my-variables';
-@import 'waves';
-
+@import "my-variables";
+@import "waves";
 
 /*Scrollbar*/
 *::-webkit-scrollbar {
@@ -17,33 +16,36 @@
   background-clip: content-box;
 }
 
-
 /*Background*/
 body {
   background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
   overflow: overlay;
-  
+
   .btn-gradient {
     color: white;
-      transition: transform .2s ease-in-out;
-      background: linear-gradient(60deg, $primary-color 0%, $secondary-color 100%);
+    transition: transform 0.2s ease-in-out;
+    background: linear-gradient(
+      60deg,
+      $primary-color 0%,
+      $secondary-color 100%
+    );
 
-      &:hover {
-        color: white;
-        transform: scale(1.05);  
-      }
-      
+    &:hover {
+      color: white;
+      transform: scale(1.05);
+    }
   }
 
   .fs-black {
     width: 100%;
     height: 100%;
-    position: absolute;
-    background-color: rgba(#000000, .6);
+    position: fixed;
+    background-color: rgba(#000000, 0.6);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .2s ease-in-out;
 
     span {
       padding-left: 1rem;
@@ -54,13 +56,13 @@ body {
 /* header */
 .header {
   position: relative;
-  text-align:center;
+  text-align: center;
   background-attachment: fixed;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   min-height: 101vh;
   height: fit-content;
   width: 100%;
-  
+
   /*Nav*/
   nav {
     position: relative;
@@ -75,74 +77,58 @@ body {
       margin: 3rem 2rem;
       color: white;
       font-size: 2rem;
-      
+
       width: 4rem;
       height: 4rem;
       border: 2px solid white;
-
-      
     }
     .logo-animation {
       display: none;
       opacity: 0;
-      transition: opacity .5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
-
-    
-  
   }
 
+  .cards-container {
+    margin: 0 auto;
+    justify-content: flex-start;
 
-    .cards-container {
-      margin: 0 auto;
-      justify-content: flex-start;
+    .load-more-btn {
+      border: 2px solid white;
+      max-width: fit-content;
+      opacity: 0;
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
 
-      .load-more-btn {
-        border: 2px solid white;
-        max-width: fit-content;
+    .my-card {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
 
-        margin-top: 3em;
-        margin-bottom: 3em;
-      }
-
-      .my-card {
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        
-
-        .card {
-
-          height: 100%;
-          .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-top: 2em;
-            align-items: center;
-          }
+      .card {
+        height: 100%;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-top: 2em;
+          align-items: center;
         }
-
-       
-      }
-      .read-article-btn {
-        max-width: fit-content;
-        
       }
     }
-}
-  
-  /* Footer */
-  footer {
-    i {
-      color: $secondary-color;
+    .read-article-btn {
+      max-width: fit-content;
     }
   }
-  
-
-.modal {
-  position:absolute;
 }
-  
+
+/* Footer */
+footer {
+  i {
+    color: $secondary-color;
+  }
+}
+
 @media only screen and (min-width: 576px) {
   .header {
     nav {
