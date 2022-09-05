@@ -26,7 +26,6 @@ let loadedIds = 0;
 
 function getNextDetails() {
   let nextIds = allIds.slice(loadedIds, loadedIds + 10);
-  console.log(nextIds);
   let details = nextIds.map((id) =>
     axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
   );
