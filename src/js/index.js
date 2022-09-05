@@ -18,7 +18,7 @@ async function getIdList(url) {
     }
   });
 
-  allIds.push(...response.data);
+  allIds = [...response.data];
 }
 
 // function to fetch details of the next ten ids
