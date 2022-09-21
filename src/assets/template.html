@@ -11,16 +11,19 @@
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
 
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -40,14 +43,71 @@
         <span class="logo-animation">HACKER NEWS, YOUR DAILY TECH FEED</span>
       </nav>
 
-      <!-- Cards container -->
-      <div class="container cards-container row">
+      <!-- Tabs navs -->
+      <ul
+        class="container tabs-container nav nav-tabs"
+        id="ex1"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="new-tab"
+            data-mdb-toggle="tab"
+            href="#new-tabs"
+            role="tab"
+            aria-controls="new-tabs"
+            aria-selected="true"
+            >New</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="top-tab"
+            data-mdb-toggle="tab"
+            href="#top-tabs"
+            role="tab"
+            aria-controls="top-tabs"
+            aria-selected="false"
+            >Top</a
+          >
+        </li>
+      </ul>
+      <!-- Tabs navs -->
+
+      <!-- Tabs content -->
+      <div class="tab-content" id="ex1-content">
+        <!-- Cards container -->
         <div
-          class="load-more-div col-12 p-3 d-flex justify-content-center align-items-center">
-          <button class="load-more-btn btn btn-gradient btn-rounded">
-            Load more
-          </button>
+          class="container cards-container row tab-pane fade show active"
+          id="new-tabs"
+          role="tabpanel"
+          aria-labelledby="new-tab"
+        >
+          <div
+            class="load-more-div-new col-12 p-3 d-flex justify-content-center align-items-center"
+          >
+            <button class="load-more-btn-new btn btn-gradient btn-rounded">
+              Load more
+            </button>
+          </div>
         </div>
+        <div
+          class="container cards-container row tab-pane fade"
+          id="top-tabs"
+          role="tabpanel"
+          aria-labelledby="top-tab"
+        >
+          <div
+            class="load-more-div-top col-12 p-3 d-flex justify-content-center align-items-center"
+          >
+            <button class="load-more-btn-top btn btn-gradient btn-rounded">
+              Load more
+            </button>
+          </div>
+        </div>
+        
       </div>
 
       <!-- Waves -->
@@ -58,28 +118,33 @@
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 24 150 28"
           preserveAspectRatio="none"
-          shape-rendering="auto">
+          shape-rendering="auto"
+        >
           <defs>
             <path
               id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
           </defs>
           <g class="parallax">
             <use
               xlink:href="#gentle-wave"
               x="48"
               y="0"
-              fill="rgba(255,255,255,0.7" />
+              fill="rgba(255,255,255,0.7"
+            />
             <use
               xlink:href="#gentle-wave"
               x="48"
               y="3"
-              fill="rgba(255,255,255,0.5)" />
+              fill="rgba(255,255,255,0.5)"
+            />
             <use
               xlink:href="#gentle-wave"
               x="48"
               y="5"
-              fill="rgba(255,255,255,0.3)" />
+              fill="rgba(255,255,255,0.3)"
+            />
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
           </g>
         </svg>
@@ -91,7 +156,8 @@
         id="errorModal"
         tabindex="-1"
         aria-labelledby="errorModal"
-        aria-hidden="false">
+        aria-hidden="false"
+      >
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -100,21 +166,24 @@
                 type="button"
                 class="btn-close"
                 data-mdb-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body"></div>
             <div class="modal-footer">
               <button
                 type="button"
                 class="btn btn-secondary btn-gradient btn-rounded"
-                data-mdb-dismiss="modal">
+                data-mdb-dismiss="modal"
+              >
                 Close
               </button>
               <a href="./index.html">
                 <button
                   type="button"
                   class="btn btn-primary btn-gradient btn-rounded"
-                  id="retry-btn">
+                  id="retry-btn"
+                >
                   Retry
                 </button>
               </a>
@@ -127,7 +196,8 @@
     <footer class="text-center text-lg-start bg-white text-muted">
       <!-- Section: Social media -->
       <section
-        class="container d-flex justify-content-center p-4 border-bottom">
+        class="container d-flex justify-content-center p-4 border-bottom"
+      >
         <!-- Left -->
         <div class="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
@@ -150,7 +220,8 @@
           </a>
           <a
             href="https://www.linkedin.com/in/ali-sher-khan-1331a8205/"
-            class="me-4 link-grayish">
+            class="me-4 link-grayish"
+          >
             <i class="fab fa-linkedin"></i>
           </a>
           <a href="https://github.com/alisherkhan98" class="link-grayish">
@@ -164,7 +235,8 @@
       <!-- Copyright -->
       <div
         class="text-center p-4"
-        style="background-color: rgba(0, 0, 0, 0.025)">
+        style="background-color: rgba(0, 0, 0, 0.025)"
+      >
         Credits:
         <a class="text-reset fw-bold" href="https://github.com/HackerNews/API"
           >Hacker News x Firebase</a
@@ -183,7 +255,8 @@
     <!-- MDB -->
     <script
       type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+    ></script>
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

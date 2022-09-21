@@ -108,7 +108,8 @@ To get a local copy of the project up and running follow these simple example st
    ```
 3. Create a new `.env` file in the root of the project and copy this in it
    ```js
-   API_URL = "https://hacker-news.firebaseio.com/v0/newstories.json";
+   API_URL_NEW="https://hacker-news.firebaseio.com/v0/newstories.json"
+   API_URL_TOP="https://hacker-news.firebaseio.com/v0/topstories.json"
    ```
 4. Now if you want to open a live server to start developing type this in your terminal:
 
@@ -130,11 +131,11 @@ To get a local copy of the project up and running follow these simple example st
 
 ## Usage
 
-The app is very basic, there's one button at the bottom of the page to load ten more articles, and on every card you can press a "read article" button which leads you to the article itself.
+The app is very basic, there's one button at the bottom of the page to load ten more articles, and on every card you can press a "read article" button which leads you to the article itself. You can switch between tabs to view the newest or the top rated articles.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-##ERROR HANDLING
+## Error handling
 
 If an error occurs during the calls to the API a custom modal appears with the description of the error. If it's a 404 or a 500 status error a custom message will appear, otherwise it will show the error message and the relative status code.
 
